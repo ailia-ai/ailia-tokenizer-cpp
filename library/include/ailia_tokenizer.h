@@ -2,7 +2,7 @@
  * \~japanese
  * @file ailia_tokenizer.h
  * @brief ailia Tokenizer NLP TOKENIZER ライブラリ
- * @copyright AXELL CORPORATION, ax Inc.
+ * @copyright AXELL CORPORATION, ailia Inc.
  * @date 2024/07/26
  */
 
