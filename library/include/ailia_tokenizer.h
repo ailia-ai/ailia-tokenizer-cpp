@@ -3,7 +3,7 @@
  * @file ailia_tokenizer.h
  * @brief ailia Tokenizer NLP TOKENIZER ライブラリ
  * @copyright AXELL CORPORATION, ailia Inc.
- * @date 2024/07/26
+ * @date 2026/01/18
  */
 
 #ifndef INCLUDED_AILIA_TOKENIZER
@@ -124,7 +124,7 @@ extern "C" {
 /**
  * \~japanese
  * @def AILIA_TOKENIZER_TYPE_ROBERTA
- * @brief  RoBERTa向けのトークナイザ
+ * @brief RoBERTa向けのトークナイザ
  *
  * \~english
  * @def AILIA_TOKENIZER_TYPE_ROBERTA
@@ -146,7 +146,7 @@ extern "C" {
 /**
  * \~japanese
  * @def AILIA_TOKENIZER_TYPE_GPT2
- * @brief  GPT2向けのトークナイザ
+ * @brief GPT2向けのトークナイザ
  *
  * \~english
  * @def AILIA_TOKENIZER_TYPE_GPT2
@@ -157,13 +157,24 @@ extern "C" {
 /**
  * \~japanese
  * @def AILIA_TOKENIZER_TYPE_LLAMA
- * @brief  LLAMA向けのトークナイザ
+ * @brief LLAMA向けのトークナイザ
  *
  * \~english
  * @def AILIA_TOKENIZER_TYPE_LLAMA
  * @brief Tokenizer for LLAMA
  */
 #define AILIA_TOKENIZER_TYPE_LLAMA (10)
+
+/**
+ * \~japanese
+ * @def AILIA_TOKENIZER_TYPE_GEMMA
+ * @brief GEMMA向けのトークナイザ
+ *
+ * \~english
+ * @def AILIA_TOKENIZER_TYPE_GEMMA
+ * @brief Tokenizer for GEMMA
+ */
+#define AILIA_TOKENIZER_TYPE_GEMMA (11)
 
 /****************************************************************
  * フラグ定義
@@ -320,7 +331,7 @@ int AILIA_API ailiaTokenizerOpenMergeFileW(struct AILIATokenizer* net, const wch
  * @return
  *   成功した場合は \ref AILIA_STATUS_SUCCESS 、そうでなければエラーコードを返す。
  * @details
- *   追加トークンファイル (json) を読み込みます。AILIA_TOKENIZER_TYPE_WHISPERの場合のみ有効です。
+ *   追加トークンファイル (json) を読み込みます。AILIA_TOKENIZER_TYPE_WHISPERもしくはAILIA_TOKENIZER_TYPE_XLM_ROBERTAの場合のみ有効です。
  *
  * \~english
  * @brief Open added tokens file.
@@ -329,7 +340,7 @@ int AILIA_API ailiaTokenizerOpenMergeFileW(struct AILIATokenizer* net, const wch
  * @return
  *   If this function is successful, it returns  \ref AILIA_STATUS_SUCCESS , or an error code otherwise.
  * @details
- *   Open a added tokens file (json). This API only requires for AILIA_TOKENIZER_TYPE_WHISPER.
+ *   Open a added tokens file (json). This API only requires for AILIA_TOKENIZER_TYPE_WHISPER or AILIA_TOKENIZER_TYPE_XLM_ROBERTA.
  */
 int AILIA_API ailiaTokenizerOpenAddedTokensFileA(struct AILIATokenizer* net, const char *path);
 int AILIA_API ailiaTokenizerOpenAddedTokensFileW(struct AILIATokenizer* net, const wchar_t *path);
